@@ -35,7 +35,7 @@ namespace Framework
         public void SuccessfulLogin(string username)
         {
             var accountContent = LoginPage.LoginAsCustomer(username, Password).
-                Cocpit.DisplayedUsername.Text;            
+                Cockpit.DisplayedUsername.Text;            
             Assert.True(accountContent.Contains(ExpectedUser), ExpectedUser + " username was not found after login. \nText after login was: " + accountContent);
         }
 

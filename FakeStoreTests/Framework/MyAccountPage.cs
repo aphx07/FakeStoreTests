@@ -6,10 +6,10 @@ namespace Framework
     {
         public MyAccountPage(IWebDriver driver) : base(driver)
         {
-            Cocpit = new Cocpit(Driver);
+            Cockpit = new Cockpit(Driver);
         }       
 
-        public Cocpit Cocpit { get; set; }
+        public Cockpit Cockpit { get; set; }
 
 
     }

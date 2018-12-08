@@ -49,7 +49,7 @@
   <ItemGroup>
     <Compile Include="BasePage.cs" />
     <Compile Include="BrowserType.cs" />
-    <Compile Include="Cocpit.cs" />
+    <Compile Include="Cockpit.cs" />
     <Compile Include="LoginPage.cs" />
     <Compile Include="MyAccountPage.cs" />
     <Compile Include="WebDriverFactory.cs" />
