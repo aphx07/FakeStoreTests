@@ -1,6 +1,7 @@
-﻿using OpenQA.Selenium;
+﻿using Framework.PageObjects;
+using OpenQA.Selenium;
 
-namespace Framework
+namespace Framework.PageObjectsk
 {
     public class Cockpit : BasePage
     {

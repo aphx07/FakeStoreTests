@@ -1,33 +1,33 @@
-﻿using NUnit.Framework;
+﻿using Framework;
+using Framework.PageObjects;
+using NUnit.Framework;
 using OpenQA.Selenium;
+using OpenQA.Selenium.Support.UI;
+using System;
+using System.Configuration;
 
-namespace Framework
+namespace FakeStoreTests
 {
     [TestFixture]
-    public class LoginTests
-    {
-        IWebDriver Driver { get; set; }
-        static public string Password => "";
+    public class LoginTests : BaseTest
+    {        
+        static public string Password => "7Eh!m6hSAXn9f1Rxl0Zoh6sl";
         static public string ExpectedUser => "Geralt z Rivii";        
         public string ExpectedErrorMessage { get; set; }
         public string ActualErrorMessage { get; set; }
         public LoginPage LoginPage { get; set; }
 
         [SetUp]
-        public void DriverSetUp()
+        public void GoToLoginPage()
         {
-            var factory = new WebDriverFactory();
-            Driver = factory.Create(BrowserType.Firefox);
             LoginPage = new LoginPage(Driver).GoTo();
         }
 
         [TearDown]
-        public void DriverQuitAndClose()
+        public void CleanUp()
         {
             ExpectedErrorMessage = null;            
-            ActualErrorMessage = null;
-            Driver.Close();
-            Driver.Quit();
+            ActualErrorMessage = null;            
         }
 
         [TestCase("test@testelka.pl")]
@@ -50,6 +50,7 @@ namespace Framework
             ActualErrorMessage = LoginPage.LoginWithBadCredentials(username, password).ErrorMessage.Text;
             Assert.AreEqual(expectedErrorMessage, ActualErrorMessage,
                 "Error message after failed login was different than expected. \nExpected: " + expectedErrorMessage + "\nActual: " + ActualErrorMessage);
+            
         }        
     }
 }

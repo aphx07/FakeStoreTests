@@ -1,6 +1,7 @@
 ﻿using OpenQA.Selenium;
+using System.Configuration;
 
-namespace Framework
+namespace Framework.PageObjects
 {
     public class LoginPage : BasePage
     {
@@ -13,7 +14,7 @@ namespace Framework
 
         public LoginPage GoTo()
         {
-            Driver.Navigate().GoToUrl("https://fakestore.testelka.pl/moje-konto/");
+            Driver.Navigate().GoToUrl(ConfigurationManager.AppSettings["homePageUrl"] + "/moje-konto/");
             return this;
         }
 

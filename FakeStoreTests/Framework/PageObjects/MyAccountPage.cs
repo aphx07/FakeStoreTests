@@ -1,6 +1,7 @@
-﻿using OpenQA.Selenium;
+﻿using Framework.PageObjectsk;
+using OpenQA.Selenium;
 
-namespace Framework
+namespace Framework.PageObjects
 {
     public class MyAccountPage : BasePage
     {
@@ -10,7 +11,6 @@ namespace Framework
         }       
 
         public Cockpit Cockpit { get; set; }
-
 
     }
 }
